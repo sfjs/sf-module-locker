@@ -1,0 +1,45 @@
+{
+  "name": "sf.locker",
+  "version": "0.1.0",
+  "description": "Spiral Framework Locker",
+  "main": "dist/sf.locker.js",
+  "scripts": {
+    "test": "gulp test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sfjs/sf-module-locker.git"
+  },
+  "keywords": [
+    "locker",
+    "spiral",
+    "sf.js",
+    "sf"
+  ],
+  "author": "SpiralScout",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sfjs/sf-module-locker/issues"
+  },
+  "homepage": "https://github.com/sfjs/sf-module-locker#readme",
+  "devDependencies": {
+    "babel-core": "^6.3.26",
+    "babel-loader": "^6.2.0",
+    "babel-plugin-transform-runtime": "^6.3.13",
+    "babel-preset-es2015": "^6.3.13",
+    "css-loader": "^0.23.1",
+    "del": "^2.2.0",
+    "gulp": "^3.9.0",
+    "gulp-util": "^3.0.7",
+    "html-loader": "^0.4.0",
+    "less": "^2.5.3",
+    "less-loader": "^2.2.2",
+    "run-sequence": "^1.1.5",
+    "style-loader": "^0.13.0",
+    "webpack": "^1.12.9",
+    "gulp-header": "^1.7.1",
+    "gulp-uglify": "^1.5.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-sourcemaps": "^1.6.0"
+  }
+}
