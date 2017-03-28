@@ -107,4 +107,4 @@ Lock.prototype.types = {
 Lock.prototype.types.default = Lock.prototype.types.spinner;
 
 
-export {Lock as default};
+export default Lock;

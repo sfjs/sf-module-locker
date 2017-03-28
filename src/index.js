@@ -1,6 +1,6 @@
 "use strict";
-import sf from 'sf-core';
-import Lock from './Lock';
+var sf = require('sf-core');
+var Lock = require('./Lock').default;
 
 sf.registerInstanceType(Lock);
 
