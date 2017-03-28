@@ -1,12 +1,12 @@
 "use strict";
-import sf from 'sf';//resolved in webpack's "externals"
+import sf from 'sf-core';
 
 /**
  * Spiral lock for forms
  * @constructor Lock
  */
 
-var Lock = function (sf, node, options) {
+var Lock = function(sf, node, options) {
     this._construct(sf, node, options);
 };
 
@@ -28,17 +28,18 @@ Lock.prototype.name = "lock";
  * @param {Object} [options] all options to override default
  * @private
  */
-Lock.prototype._construct = function (sf, node, options) {
-    this.init(sf, node, options);//call parent
+Lock.prototype._construct = function(sf, node, options) {
+    this.init(sf, node, options);
     this.add(this.options.type, this.node);
 };
+
 /**
  * Add lock
  * @param {String} [type] type of lock @see sf.lock.types
  * @param {Object} context context to add lock
- * @returns {Function|*}
+ * @return {Function|*}
  */
-Lock.prototype.add = function (type, context) {
+Lock.prototype.add = function(type, context) {
     if (!this.types.hasOwnProperty(type)) {
         return false;
     }
@@ -52,15 +53,16 @@ Lock.prototype.add = function (type, context) {
 /**
  * Clear all variables and die
  */
-Lock.prototype.die = function () {
+Lock.prototype.die = function() {
     this.remove();
 };
 /**
  * Remove lock
+ * @return {boolean}
  */
-Lock.prototype.remove = function () {
+Lock.prototype.remove = function() {
     this.node.classList.remove("locked");
-    var sfLock = this.node.querySelector(".js-sf-lock");//todo this.lockNode ?
+    var sfLock = this.node.querySelector(".js-sf-lock"); // TODO this.lockNode ?
     if (sfLock) {
         this.node.removeChild(sfLock);
     }
@@ -91,18 +93,18 @@ Lock.prototype.types = {
         html: '<div class="sf-progress"><div class="progress-line"></div></div>',
         /**
          * Function to change styles while AJAX progress
-         * @param current
-         * @param total
+         * @param {Number} current
+         * @param {Number} total
          */
-        progress: function (current, total) {
+        progress: function(current, total) {
             var progress = this.context.getElementsByClassName("progress-line")[0];
             progress.style.width = 100 * (current / total) + "%";
         }
     }
 };
 
-//we have to have some default locker, let it be spinner
+// We have to have some default locker, let it be spinner
 Lock.prototype.types.default = Lock.prototype.types.spinner;
 
 
-export { Lock as default };
+export {Lock as default};
