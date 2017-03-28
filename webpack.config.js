@@ -49,7 +49,10 @@ module.exports = {
   },
   externals: {
     "sf-core": {
-      commonjs: "sf-core"
+      commonjs: "sf-core",
+      commonjs2: "sf-core",
+      amd: "sf-core",
+      root: "sf"
     }
   }
 };
